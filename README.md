@@ -1,25 +1,25 @@
 # 23521827-HoVuongTuongVy-IE213.Q21.2
 
-## Liste des labs
-- **Lab 1** – CRUD avec MongoDB (Atlas, Compass, Mongosh)
+## Danh sách lab
+- **Lab 1** – CRUD với MongoDB (Atlas, Compass, Mongosh)
 
-## Description du Lab 1
-- TP axé sur les opérations CRUD (Create, Read, Update, Delete) avec MongoDB.
-- Objectifs : déployer une base dans le cloud, connecter un outil de gestion, pratiquer l’ajout, la recherche, la mise à jour, la suppression et quelques stats simples (somme, moyenne) sur les documents.
+## Mô tả Lab 1
+- Bài thực hành tập trung vào các thao tác CRUD (Create, Read, Update, Delete) trên MongoDB.
+- Mục tiêu: thiết lập môi trường DB trên đám mây, kết nối công cụ quản lý, luyện tập thêm/tìm/cập nhật/xóa và thống kê đơn giản (tổng, trung bình) trên document.
 
-## Comment exécuter
-1) **Préparer l’environnement**
-   - Créer un cluster gratuit sur MongoDB Atlas.
-   - Charger les données d’exemple (sample data) et installer MongoDB Compass.
-   - Utiliser la chaîne de connexion pour relier Compass au cluster Atlas.
+## Cách chạy
+1) **Chuẩn bị môi trường**
+   - Tạo cluster miễn phí trên MongoDB Atlas.
+   - Nạp sample data và cài MongoDB Compass.
+   - Dùng connection string để kết nối Compass với cluster Atlas.
 
-2) **Utiliser la ligne de commande**
-   - Ouvrir `mongosh` intégré à MongoDB Compass (ou Mongo Shell) pour saisir les commandes.
-   - Remarque : ne pas utiliser l’UI pour insérer directement des données; tout doit passer par la ligne de commande.
+2) **Dùng dòng lệnh**
+   - Mở `mongosh` trong Compass (hoặc Mongo Shell) để nhập lệnh.
+   - Lưu ý: không dùng UI để thêm dữ liệu; thao tác qua dòng lệnh.
 
-3) **Exécuter les commandes**
-   - Créer une base nommée `MSSV-IE213` et une collection `employees`.
-   - Manipuler les données : insérer, rechercher, mettre à jour, supprimer; réaliser les agrégations nécessaires (somme, moyenne).
+3) **Thực thi lệnh**
+   - Tạo database tên `MSSV-IE213` và collection `employees`.
+   - Thao tác dữ liệu: `insertMany`, `find`, `updateMany`, `deleteMany`, và các phép thống kê cần thiết.
 
-## Résultat
-![Résultat Lab 1](image.png)
+## Kết quả
+![Kết quả Lab 1](image.png)
