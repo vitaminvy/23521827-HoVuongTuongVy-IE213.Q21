@@ -119,3 +119,11 @@
   ![Kết quả USSH](image-23.png)  
   ![Kết quả UIT](image-24.png)
 
+### Note (Bài 2)
+- `createIndex({ id: 1 }, { unique: true })`: khóa `id` duy nhất; insert/update trùng sẽ báo lỗi duplicate key.
+- Truy vấn field lồng nhau dùng dot notation, ví dụ `"name.first"`, `"name.middle"`.
+- Bộ so sánh `$gt`, `$lt` kết hợp để lọc theo khoảng giá trị (tuổi 30–60).
+- `$exists: true` kiểm tra field có tồn tại; hữu ích để lọc document có `name.middle`.
+- `$unset` xóa field mà không xóa document; dùng với `updateMany` để gỡ `name.middle` hàng loạt.
+- `$set` thêm hoặc cập nhật field; filter `{}` sẽ áp cho mọi document.
+- Pipeline aggregate: `$match` lọc theo organization trước, `$group` tính `sum`/`avg`/`count` cho từng nhóm.
