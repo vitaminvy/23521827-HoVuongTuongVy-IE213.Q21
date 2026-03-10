@@ -119,7 +119,3 @@
   ![Kết quả USSH](image-23.png)  
   ![Kết quả UIT](image-24.png)
 
-## Mẹo nhỏ
-- Lưu connection string trong `.env` riêng, tránh push lên repo.
-- Dùng `db.employees.find().pretty()` để xem JSON dễ đọc.
-- Nếu bị lỗi quyền kết nối, kiểm tra lại IP Access List trên Atlas.
