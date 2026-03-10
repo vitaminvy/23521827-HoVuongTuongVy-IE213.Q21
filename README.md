@@ -1,25 +1,25 @@
 # 23521827-HoVuongTuongVy-IE213.Q21.2
 
-## Danh sách lab
-- **Lab 1** – CRUD với MongoDB (Atlas + Compass + Mongosh)
+## Liste des labs
+- **Lab 1** – CRUD avec MongoDB (Atlas, Compass, Mongosh)
 
-## Mô tả Lab 1
-- Bài thực hành tập trung vào các thao tác CRUD (Create, Read, Update, Delete) trên MongoDB.
-- Mục tiêu: thiết lập môi trường DB trên đám mây, kết nối công cụ quản lý, và luyện tập các câu lệnh thêm, tìm kiếm, cập nhật, xóa, cùng thống kê đơn giản (tổng, trung bình) trên document.
+## Description du Lab 1
+- TP axé sur les opérations CRUD (Create, Read, Update, Delete) avec MongoDB.
+- Objectifs : déployer une base dans le cloud, connecter un outil de gestion, pratiquer l’ajout, la recherche, la mise à jour, la suppression et quelques stats simples (somme, moyenne) sur les documents.
 
-## Cách chạy
-1) **Thiết lập môi trường**
-   - Đăng ký tài khoản và tạo một cluster miễn phí trên MongoDB Atlas.
-   - Nạp dữ liệu mẫu (sample data) vào cluster và cài đặt MongoDB Compass trên máy.
-   - Dùng connection string để kết nối MongoDB Compass với cluster Atlas.
+## Comment exécuter
+1) **Préparer l’environnement**
+   - Créer un cluster gratuit sur MongoDB Atlas.
+   - Charger les données d’exemple (sample data) et installer MongoDB Compass.
+   - Utiliser la chaîne de connexion pour relier Compass au cluster Atlas.
 
-2) **Sử dụng dòng lệnh**
-   - Mở `mongosh` tích hợp trong MongoDB Compass (hoặc Mongo Shell) để nhập lệnh.
-   - Lưu ý: Không dùng giao diện đồ họa để thêm trực tiếp dữ liệu; mọi thao tác thực hiện qua dòng lệnh.
+2) **Utiliser la ligne de commande**
+   - Ouvrir `mongosh` intégré à MongoDB Compass (ou Mongo Shell) pour saisir les commandes.
+   - Remarque : ne pas utiliser l’UI pour insérer directement des données; tout doit passer par la ligne de commande.
 
-3) **Thực thi câu lệnh**
-   - Tạo database theo định dạng `MSSV-IE213` và collection `employees`.
-   - Thao tác dữ liệu: thêm, tìm kiếm, cập nhật, xóa; thực hiện phép toán thống kê cần thiết.
+3) **Exécuter les commandes**
+   - Créer une base nommée `MSSV-IE213` et une collection `employees`.
+   - Manipuler les données : insérer, rechercher, mettre à jour, supprimer; réaliser les agrégations nécessaires (somme, moyenne).
 
-## Kết quả
-![Kết quả Lab 1](image.png)
+## Résultat
+![Résultat Lab 1](image.png)
