@@ -123,7 +123,9 @@ Kết quả:
 - Có thể mở thư mục lab và thao tác trực tiếp trên source code backend
 
 Ảnh minh họa:
+
 ![alt text](img/image-10.png)
+
 
 
 ### 1.3 Khởi tạo cây thư mục dự án
@@ -138,7 +140,9 @@ Kết quả:
 - Hoàn thành cấu trúc thư mục ban đầu cho ứng dụng backend
 
 Ảnh minh họa:
+
 ![alt text](img/image.png)
+
 
 ### 1.4 Khởi tạo dự án với npm
 
@@ -153,6 +157,7 @@ Kết quả:
 - Tạo file `package.json` cho project backend
 
 Ảnh minh họa:
+
 ![alt text](img/image-15.png)
 
 ### 1.5 Cài đặt các thư viện cần thiết
@@ -170,6 +175,7 @@ Kết quả:
 Ảnh minh họa:
 
 ![alt text](img/image-8.png)
+
 
 ### 1.6 Cài đặt nodemon
 
