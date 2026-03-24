@@ -107,6 +107,7 @@ npm -v
 Kết quả:
 
 - Máy đã cài đặt thành công NodeJS và npm
+  
 ![alt text](img/image-1.png)
 
 
