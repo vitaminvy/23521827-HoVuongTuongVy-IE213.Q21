@@ -107,10 +107,8 @@ npm -v
 Kết quả:
 
 - Máy đã cài đặt thành công NodeJS và npm
+![alt text](img/image-1.png)
 
-Ảnh minh họa:
-
-![alt text](image.png)
 
 ### 1.2 Cài đặt công cụ soạn thảo mã nguồn
 
@@ -123,7 +121,7 @@ Kết quả:
 - Có thể mở thư mục lab và thao tác trực tiếp trên source code backend
 
 Ảnh minh họa:
-![alt text](image.png)
+![alt text](img/image-10.png)
 
 
 ### 1.3 Khởi tạo cây thư mục dự án
@@ -138,7 +136,7 @@ Kết quả:
 - Hoàn thành cấu trúc thư mục ban đầu cho ứng dụng backend
 
 Ảnh minh họa:
-![alt text](image.png)
+![alt text](img/image.png)
 
 ### 1.4 Khởi tạo dự án với npm
 
@@ -153,7 +151,7 @@ Kết quả:
 - Tạo file `package.json` cho project backend
 
 Ảnh minh họa:
-![alt text](image.png)
+![alt text](img/image-15.png)
 
 ### 1.5 Cài đặt các thư viện cần thiết
 
@@ -169,7 +167,7 @@ Kết quả:
 
 Ảnh minh họa:
 
-![alt text](image-8.png)
+![alt text](img/image-8.png)
 
 ### 1.6 Cài đặt nodemon
 
@@ -185,7 +183,7 @@ Kết quả:
 
 Ảnh minh họa:
 
-![alt text](image-1.png)
+![alt text](img/image-7.png)
 ## Bài 2: Xây dựng backend cho Movie Reviews
 
 ### 2.1 Tạo file `server.js`
@@ -369,21 +367,24 @@ Thực hiện:
 ```text
 http://localhost:3000/api/v1/movies
 http://localhost:3000/api/v1/movies?page=1&moviesPerPage=5
-http://localhost:3000/api/v1/movies?rated=PG
+http://localhost:3000/api/v1/movies?rated=PG-13
 http://localhost:3000/api/v1/movies?title=matrix
 ```
 
 Kết quả:
-
 - API trả về dữ liệu phim ở dạng JSON
 - Hỗ trợ phân trang
 - Hỗ trợ lọc theo `rated`
 - Hỗ trợ tìm kiếm theo `title`
 
-Ảnh minh họa:
+Ảnh minh họa
 http://localhost:3000/api/v1/movies
-![alt text](image-9.png)
-
+![alt text](img/image-11.png)
+http://localhost:3000/api/v1/movies?page=1&moviesPerPage=5
+![alt text](img/image-12.png)
+http://localhost:3000/api/v1/movies?rated=PG-13
+![alt text](img/image-13.png)
+![alt text](img/image-14.png)
 ## 7. Kết luận
 
 Qua Lab02, em đã thiết lập được backend cơ bản bằng NodeJS/ExpressJS, kết nối MongoDB Atlas và tổ chức mã nguồn theo mô hình route/controller/dao. Ứng dụng có thể truy vấn danh sách phim, phân trang dữ liệu và hỗ trợ một số điều kiện lọc cơ bản phục vụ cho các bài thực hành tiếp theo.
