@@ -362,7 +362,6 @@ Kết quả:
 
 - server khởi động với đầy đủ collection `movies` và `reviews`
 
-Ảnh minh họa: [Bạn chèn ảnh vào đây]
 
 ## Bài 4: Hoàn thành back-end cho ứng dụng minh hoạ
 
@@ -554,7 +553,6 @@ Kết quả:
 - API chi tiết phim đã trả được thông tin phim + danh sách review liên quan
 - API ratings đã trả được danh sách loại `rated` hiện có trong dữ liệu
 
-Ảnh minh họa: [Bạn chèn ảnh vào đây]
 
 ## 7. Kiểm thử bằng Postman
 
