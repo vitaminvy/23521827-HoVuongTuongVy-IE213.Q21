@@ -19,14 +19,14 @@ function formatDate(value) {
 function Poster({ movie }) {
   if (movie.poster) {
     return (
-      <div className="poster-shell">
+      <div className="poster-shell detail-poster">
         <img src={movie.poster} alt={movie.title} />
       </div>
     );
   }
 
   return (
-    <div className="poster-shell">
+    <div className="poster-shell detail-poster">
       <div className="poster-fallback">{movie.title?.slice(0, 1) || "M"}</div>
     </div>
   );
@@ -100,86 +100,135 @@ export default function Movie({ user }) {
   }
 
   return (
-    <div className="stack-gap">
-      <section className="section-hero">
-        <Row className="g-4 align-items-center">
-          <Col lg={4}>
-            <Poster movie={movie} />
-          </Col>
-          <Col lg={8}>
-            <span className="eyebrow">Movie Detail</span>
-            <h1 className="page-title">{movie.title}</h1>
-            <p className="page-subtitle">
-              {movie.plot || "Chưa có mô tả cho phim này. Bạn có thể xem thông tin cơ bản và thêm review ngay từ giao diện này."}
-            </p>
-            <div className="movie-meta mb-4">
-              {movie.year ? <span className="movie-chip">Năm {movie.year}</span> : null}
-              {movie.runtime ? (
-                <span className="movie-chip">{movie.runtime} phút</span>
-              ) : null}
-              {movie.rated ? <span className="movie-chip">Rated {movie.rated}</span> : null}
-              {movie.imdb?.rating ? (
-                <span className="movie-chip">IMDb {movie.imdb.rating}</span>
-              ) : null}
+    <div className="movie-detail-page">
+      <section className="movie-detail-hero">
+        <Row className="g-4 g-xl-5 align-items-stretch">
+          <Col lg={4} xl={3}>
+            <div className="detail-poster-card">
+              <Poster movie={movie} />
+              <div className="detail-poster-caption">
+                <span>{movie.rated || "Unrated"}</span>
+                <strong>{movie.imdb?.rating ? `IMDb ${movie.imdb.rating}` : "IMDb N/A"}</strong>
+              </div>
             </div>
-            <div className="d-flex flex-wrap gap-2">
-              <Button as={Link} to="/movies" className="btn-outline-soft">
-                Quay lại danh sách
-              </Button>
-              {user ? (
-                <Button
-                  as={Link}
-                  to={`/movies/${movie._id}/review`}
-                  className="btn-accent"
-                >
-                  Thêm review
+          </Col>
+
+          <Col lg={8} xl={9}>
+            <div className="detail-copy-panel">
+              <div className="detail-topline">
+                <span className="eyebrow mb-0">Movie Detail</span>
+                <span className="detail-review-count">
+                  {movie.reviews?.length || 0} reviews
+                </span>
+              </div>
+
+              <h1 className="detail-title">{movie.title}</h1>
+
+              <div className="detail-fact-row">
+                {movie.year ? <span>{movie.year}</span> : null}
+                {movie.runtime ? <span>{movie.runtime} phút</span> : null}
+                {movie.rated ? <span>{movie.rated}</span> : null}
+                {movie.genres?.length ? <span>{movie.genres.slice(0, 2).join(" / ")}</span> : null}
+              </div>
+
+              <p className="detail-plot">
+                {movie.plot || "Chưa có mô tả cho phim này. Bạn có thể xem thông tin cơ bản và thêm review ngay từ giao diện này."}
+              </p>
+
+              <div className="detail-action-row">
+                <Button as={Link} to="/movies" className="btn-outline-soft">
+                  Quay lại danh sách
                 </Button>
-              ) : (
-                <Button
-                  as={Link}
-                  to="/login"
-                  state={{ from: `/movies/${movie._id}/review` }}
-                  className="btn-accent"
-                >
-                  Đăng nhập để review
-                </Button>
-              )}
+                {user ? (
+                  <Button
+                    as={Link}
+                    to={`/movies/${movie._id}/review`}
+                    className="btn-accent"
+                  >
+                    Thêm review
+                  </Button>
+                ) : (
+                  <Button
+                    as={Link}
+                    to="/login"
+                    state={{ from: `/movies/${movie._id}/review` }}
+                    className="btn-accent"
+                  >
+                    Đăng nhập để review
+                  </Button>
+                )}
+              </div>
+            </div>
+
+            <div className="detail-stat-grid">
+              <div className="detail-stat">
+                <span>Năm phát hành</span>
+                <strong>{movie.year || "Không rõ"}</strong>
+              </div>
+              <div className="detail-stat">
+                <span>Thời lượng</span>
+                <strong>{movie.runtime ? `${movie.runtime} phút` : "Không rõ"}</strong>
+              </div>
+              <div className="detail-stat">
+                <span>Quốc gia</span>
+                <strong>{movie.countries?.slice(0, 2).join(", ") || "Không rõ"}</strong>
+              </div>
+              <div className="detail-stat">
+                <span>Phát hành</span>
+                <strong>{formatDate(movie.released)}</strong>
+              </div>
             </div>
           </Col>
         </Row>
       </section>
 
-      <Card className="content-card border-0">
-        <Card.Body className="p-4">
-          <Row className="g-3">
-            <Col md={6}>
-              <h2 className="h5 mb-3">Thông tin thêm</h2>
-              <p className="mb-2">
-                <strong>Thể loại:</strong>{" "}
-                {movie.genres?.join(", ") || "Không rõ"}
+      <Row className="g-4">
+        <Col lg={5}>
+          <Card className="content-card detail-info-card border-0 h-100">
+            <Card.Body className="p-4">
+              <h2 className="detail-section-title">Thông tin phim</h2>
+              <div className="detail-info-list">
+                <div>
+                  <span>Thể loại</span>
+                  <strong>{movie.genres?.join(", ") || "Không rõ"}</strong>
+                </div>
+                <div>
+                  <span>Quốc gia</span>
+                  <strong>{movie.countries?.join(", ") || "Không rõ"}</strong>
+                </div>
+                <div>
+                  <span>Đạo diễn</span>
+                  <strong>{movie.directors?.join(", ") || "Không rõ"}</strong>
+                </div>
+                <div>
+                  <span>Ngôn ngữ</span>
+                  <strong>{movie.languages?.join(", ") || "Không rõ"}</strong>
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col lg={7}>
+          <Card className="content-card detail-cast-card border-0 h-100">
+            <Card.Body className="p-4">
+              <h2 className="detail-section-title">Diễn viên</h2>
+              <p className="detail-cast-copy mb-0">
+                {movie.cast?.join(", ") || "Không rõ"}
               </p>
-              <p className="mb-2">
-                <strong>Quốc gia:</strong>{" "}
-                {movie.countries?.join(", ") || "Không rõ"}
-              </p>
-              <p className="mb-0">
-                <strong>Phát hành:</strong> {formatDate(movie.released)}
-              </p>
-            </Col>
-            <Col md={6}>
-              <h2 className="h5 mb-3">Diễn viên</h2>
-              <p className="mb-0">{movie.cast?.join(", ") || "Không rõ"}</p>
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
 
       {error ? <Alert variant="danger">{error}</Alert> : null}
 
-      <div>
-        <div className="d-flex justify-content-between align-items-center gap-3 mb-3">
-          <h2 className="h4 mb-0">Reviews</h2>
-          <span className="muted-text">
+      <section className="detail-reviews-section">
+        <div className="detail-section-heading">
+          <div>
+            <span className="eyebrow mb-2">Audience Notes</span>
+            <h2 className="detail-section-title mb-0">Reviews</h2>
+          </div>
+          <span className="detail-review-count">
             {movie.reviews?.length || 0} đánh giá
           </span>
         </div>
@@ -228,7 +277,7 @@ export default function Movie({ user }) {
             </Alert>
           )}
         </div>
-      </div>
+      </section>
     </div>
   );
 }
